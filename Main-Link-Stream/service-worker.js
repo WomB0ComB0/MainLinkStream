@@ -4,14 +4,14 @@ const cacheAssets = [
   "/",
   // Icons
   "index.html",
-  "src/assets/Images/logo512.png",
-  "src/assets/Images/logo.png",
-  "src/assets/Images/logo.png",
-  "src/assets/Images/logo.png",
-  "src/assets/Images/logo.png",
-  "src/assets/Images/logo.png",
-  "src/assets/Images/logo.png",
-  "src/assets/Images/logo.png",
+  // "src/assets/Images/logo512.png",
+  // "src/assets/Images/logo.png",
+  // "src/assets/Images/logo.png",
+  // "src/assets/Images/logo.png",
+  // "src/assets/Images/logo.png",
+  // "src/assets/Images/logo.png",
+  // "src/assets/Images/logo.png",
+  // "src/assets/Images/logo.png",
 ];
 self.addEventListener("install", (event) => { // Reinstalled whenever the file is changed and saved
   console.log("Service Worker: installed");
