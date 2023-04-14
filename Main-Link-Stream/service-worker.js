@@ -2,16 +2,7 @@ const staticCacheName = "site-static-v1";
 const dynamicCacheName = "site-dynamic-v1";
 const cacheAssets = [
   "/",
-  // Icons
-  "index.html",
-  // "src/assets/Images/logo512.png",
-  // "src/assets/Images/logo.png",
-  // "src/assets/Images/logo.png",
-  // "src/assets/Images/logo.png",
-  // "src/assets/Images/logo.png",
-  // "src/assets/Images/logo.png",
-  // "src/assets/Images/logo.png",
-  // "src/assets/Images/logo.png",
+  "index.html"
 ];
 self.addEventListener("install", (event) => { // Reinstalled whenever the file is changed and saved
   console.log("Service Worker: installed");
@@ -60,6 +51,7 @@ self.addEventListener("fetch", (event) => {
     caches.match(event.request).then((cacheRes) => {
       return cacheRes || fetch(event.request).then((fetchRes) => {
         return caches.open(dynamicCacheName).then((cache) => {
+          // options are push(doesnt work 🥹) and add
           cache.put(event.request.url, fetchRes.clone());
           limitCacheSize(dynamicCacheName, 15); // Limit cache size
           return fetchRes;

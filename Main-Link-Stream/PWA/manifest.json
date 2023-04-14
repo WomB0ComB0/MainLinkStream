@@ -1,10 +1,26 @@
 {
-    "name": "Link River",
-    "short_name": "StreamLink",
-    "start_url": ".",
+    "name": "Link Stream",
+    "short_name": "MLS",
+    "theme_color": "#000000",
+    "start_url": "/index.html",
     "description": "Central hub for all your links",
     "scope": "/",
+    "dir": "ltr",
     "orientation": "portrait-primary",
+    "display_override": ["browser","minimal-ui","fullscreen"],
+    "display": "standalone",
+    "splash_pages":[
+        {
+            "src": "Come back Later",
+            "sizes": "any",
+            "type": "image/png",
+            "density": "",
+            "orientation": "protrait",
+            "platform": "any",
+            "theme_color": "#000000",
+            "background_color": "#ffffff"
+        }
+    ],
     "icons": [
         {
             "src": "**/logo.svg",
@@ -13,28 +29,35 @@
             "purpose": "maskable any"
         }
     ],
-    "dir": "ltr",
-    "lang": "en-US",
-    "display_override": ["browser","minimal-ui","fullscreen"],
-    "display": "standalone",
-    "theme_color": "#000000",
-    "background_color": "#ffffff",  
-    "prefer_related_applications": false,
-    "serviceworker": {
-        "src": "/sw.js",
+    "screenshots": [
+        {
+            "src": "Come back Later",
+            "type": "image/png",
+            "sizes": "any",
+            "purpose": "",
+            "form_factor": "any"   
+        }
+    ],  
+    "webapp": {
+        "name": "Link Stream",
+        "short_name": "MLS",
+        "description": "Central hub for all of my (Mike Odnis') links.",
+        "theme_color": "#000000",
+        "background_color": "#ffffff",
+        "icons": {
+            "src": "**/logo.svg",
+            "type": "image/svg+xml",
+            "sizes": "any",
+            "purpose": "maskable any"
+        },
         "scope": "/",
+        "start_url": "/index.html",
+        "display": "standalone",
+        "iarc_rating_id": "E"
+    },
+    "serviceworker": {
+        "src": "**/service-worker.js",
         "use_cache": true
     },
-    "share_target": {
-        "action": "/share",
-        "method": "GET",
-        "enctype": "multipart/form-data",
-        "params": {
-            "title": "title",
-            "text": "text",
-            "url": "url"
-        }
-    },
-    // "gcm_sender_id": "103953800507",
-    // "gcm_user_visible_only": true
+    "prefer_related_applications": false
 }

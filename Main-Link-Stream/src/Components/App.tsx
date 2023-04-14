@@ -2,26 +2,16 @@ import { useState, useEffect } from 'react'
 import {BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import NotFound from './Routes/404'
 import {FallBack as Offline} from './Cache/fallback'
+import ScreenLoader from './Frontend/Extras/ScreenLoader'
 
-function Loading() {
-  const [loading, setLoading] = useState(true);
-  useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  },[]);
-  return (
-    <>
-    {/* Have a transition animation */}
-      {loading ? <div>loading...</div> : <div>loaded</div>}
-    </>
-  )
-}
 const App = () => {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() =>{
-    const handleOnline = () => setIsOnline(true);
-    const handleOffline = () => setIsOnline(false);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
 
     window.addEventListener('online', handleOnline);
     window.addEventListener('offline', handleOffline);
@@ -32,20 +22,20 @@ const App = () => {
     };
 
   },[])
+  const handleOnline = () => { setIsOnline(true); };
+  const handleOffline = () => { setIsOnline(false); };
   return (
     <>
-      {!isOnline ?
-        <Offline/> :
-          <Router>
+      {!isOnline ? 
+        (<Offline/>) : isLoading ? (<ScreenLoader/>) : 
+          (<Router>
             <Routes>
               <Route path="*" element={<NotFound></NotFound>}/>
-            
             </Routes>
-          </Router>
+          </Router>)
       }
     </>
-  )
-}
+  );
+};
 
 export default App
-export {Loading}
