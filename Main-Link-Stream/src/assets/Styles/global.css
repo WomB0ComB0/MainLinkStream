@@ -1,17 +1,14 @@
 * {
-  overflow:hidden;
   scroll-behavior:smooth;
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
   transition:0.25s all ease;
   list-style:none;
   text-decoration: none;
 }
-*, ::before, ::after {
+*, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  overflow:hidden;
 }
 
 @media screen and (max-width: 320px) {/* styles for screens smaller than 320px; */}
