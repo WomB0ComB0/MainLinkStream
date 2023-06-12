@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* shared root between themes */
+:root {
+  --primaryFont: "Inter", sans-serif, -apple-system, ui-sans-serif, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, monospace;
+  --secondaryFont: "Space Grotesk", monospace;
+  --blue1: #2a8af6;
+  --pink1: #a853ba;
+  --red1: #e92a67;
+}
+
+.theme__dark {
+  --black0: #000;
+  --black1: #131516;
+  --black2: #212121;
+  --grey1: #818080;
+  --grey2: #1c1c1c;
+  --grey3: #1b1a1a;
+  --white1: #fff;
+  --white2: #aaa;
+  --offsetred: rgba(233, 42, 103, .4);
+}
+
+.theme__light {
+  --black0: #fff;
+  --black1: #fff;
+  --black2: #e5e5e5;
+  --grey1: #999;
+  --grey2: #d9d9d9;
+  --grey3: #d9d9d9;
+  --white1: #171717;
+  --white2: #4c4c4c;
+  --offsetred: rgba(233, 42, 103, .2);
+}
+
+*,
+:after,
+:before {
+  border: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  font-size: 18px;
+  line-height: 1.15;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4
+}
+
+body,
+html {
+  height: 100%
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--black0);
+  color: var(--white1);
+  font-family: var(--primaryFont);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: inherit;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 100%;
+  position: relative;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+}
+
+h3,
+h4 {
+  font-family: var(--secondaryFont);
+}
+
+svg {
+  fill: var(--white1);
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none
+}
+
+a {
+  color: var(--red1);
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: 1px solid transparent;
+  background: transparent;
+}
+
+/* -------------------------- */
+/* ============================
+MAIN (cards)
+============================*/
+.main {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+/* ============================
+DIVIDER
+============================*/
+.section-divider {
+  backdrop-filter: brightness(2.2);
+  filter: brightness(1.5);
+  background: rgba(129, 64, 143, 0.1);
+  height: 100%;
+  margin: 0 auto;
+  min-height: 2px;
+  min-width: 100vw;
+  position: relative;
+  width: 100%;
+  z-index: 6
+}
+
+.section-gradient-left,
+.section-gradient-right {
+  border-radius: 100%;
+  filter: blur(46px);
+  margin-top: -8px;
+  min-height: 16px;
+  mix-blend-mode: normal;
+  pointer-events: none;
+  user-select: none;
+  width: 100%
+}
+
+.section-gradient-left {
+  background: #3549a6;
+  position: relative;
+  transform: translateX(-51%);
+  z-index: 2
+}
+
+.section-gradient-right {
+  background: #7c1e4b;
+  position: relative;
+  transform: translateX(51%);
+  z-index: 2
+}
+
+/* ============================
+SECTION :: SKILLS
+============================*/
+.section-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 3rem;
+  padding-top: 2rem;
+  row-gap: 1.5rem;
+  text-align: center;
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+}
+
+.change-theme {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.change-theme--btn {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+}
+
+.change-theme--btn:hover {
+  background: var(--black0);
+
+}
+
+.change-theme--btn svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  height: 1.25rem;
+  width: 1.25rem;
+  stroke: var(--white1);
+}
+
+.hide-svg {
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: relative;
+  z-index: -1;
+}
+
+.section-title h1 {
+  font-family: var(--primaryFont);
+  font-size: 2.125rem;
+  letter-spacing: -.02em;
+  font-weight: 700;
+  background-color: var(--white1);
+  background-image: linear-gradient(180deg, var(--white1), var(--white2));
+  background-size: 100%;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.skills-container {
+  align-items: center;
+  background: linear-gradient(180deg, transparent 75%, var(--black0) 90%);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 1.5rem;
+  position: relative;
+  width: 100%;
+  padding-bottom: 6rem;
+  z-index: 3;
+}
+
+.skills-grid {
+  column-gap: 1rem;
+  display: grid;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1200px;
+  row-gap: 1rem;
+  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr))
+}
+
+.skills-cell {
+  border: 1px solid var(--black2);
+  border-radius: .75rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding: 2rem;
+  width: 100%
+}
+
+.skill__header {
+  align-items: center;
+  display: flex;
+  height: 64px;
+  position: relative;
+  width: 100%;
+}
+
+.skill__header--icon-wrapper {
+  border: 1.5px solid var(--black2);
+  border-radius: 32px;
+  height: 64px;
+  width: 64px
+}
+
+.skill__header--icon,
+.skill__header--icon-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center
+}
+
+.skill__header--icon {
+  border-radius: 30px;
+  height: 48px;
+  overflow: hidden;
+  position: relative;
+  width: 48px
+}
+
+.skill__header--icon:after,
+.skill__header--icon:before {
+  border-radius: 50%;
+  content: "";
+  position: absolute
+}
+
+.skill__header--icon:before {
+  border: 12px solid transparent;
+  border-image: linear-gradient(to right bottom, var(--grey1), var(--grey2), var(--grey3));
+  border-image-slice: 1;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: all 100ms ease-in-out;
+  width: 100%
+}
+
+.skill__header--icon:after {
+  background: var(--black0);
+  height: 45.5px;
+  margin: 0 auto;
+  width: 45.5px;
+  z-index: 2;
+}
+
+.skills-cell:hover .skill__header--icon:before {
+  border-image: linear-gradient(to right bottom, var(--red1), var(--grey3), var(--black1));
+  border-image-slice: 1;
+}
+
+.skills-cell:hover .skill__header--icon svg {
+  fill: var(--red1);
+}
+
+.skill__header--icon svg {
+  fill: url(#subicon-gradient);
+  border-radius: 50%;
+  filter: drop-shadow(0 0 3px var(--offset-red));
+  height: 42px;
+  position: relative;
+  transition: fill 100ms ease-in-out;
+  width: 42px;
+  z-index: 3
+}
+
+.skill__body {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding-top: .5rem
+}
+
+.skill__body--title h3 {
+  color: var(--white1);
+  font-size: 1rem;
+  line-height: 1.5rem
+}
+
+.skill__body--content {
+  color: var(--white1);
+  opacity: .7;
+  font-weight: 500;
+  line-height: 1.5rem
+}
+
+/* ============================
+FOOTER
+============================*/
+.footer {
+  min-height: 7rem;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.footer span {
+  color: var(--white1);
+  font-family: var(--primaryFont);
+  font-weight: 500;
+}
+
+/* ============================
+QUERY
+============================*/
+@media screen and (max-width:1020px) {
+  html {
+    font-size: 16px
+  }
+}
+
+@media screen and (max-width:640px) {
+  html {
+    font-size: 14px
+  }
+}
+
+@media screen and (max-width:490px) {
+  html {
+    font-size: 13px
+  }
+
+  .skill__header {
+    justify-content: center;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width:380px) {
+  html {
+    font-size: 12px
+  }
+}
+  </style>
+</head>
+<body class="body theme__dark">
+  <!-- MAIN -->
+  <main class="main">
+    <!-- gradient constructor for icons -->
+    <svg style="opacity:0; width:0; height:0; pointer-events:none; user-select:none; z-index:-1; position:relative;">
+      <defs>
+        <linearGradient id="subicon-gradient">
+          <stop offset="5%" stop-color="#a853ba" />
+          <stop offset="95%" stop-color="#e92a67" />
+        </linearGradient>
+      </defs>
+    </svg>
+    <!--------------------->
+    <aside class="section-divider"></aside>
+    <aside class="section-gradient-left"></aside>
+    <aside class="section-gradient-right"></aside>
+    <!--------------------->
+    <!--------------------->
+    <!-- SECTION: SKILLS -->
+    <div class="skills-container">
+      <div class="section-title">
+        <aside class="change-theme">
+          <button class="change-theme--btn">
+            <svg class="moon" fill="none" viewBox="2 2 20 20" width="12" height="12" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="currentColor"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+            </svg>
+            <svg class="sun hide-svg" fill="none" viewBox="3 3 18 18" width="12" height="12" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="currentColor"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+              </path>
+            </svg>
+          </button>
+        </aside>
+        <h1>Vercel Cards</h1>
+      </div>
+      <!-- GRID -->
+      <div class="skills-grid">
+        <!-- SKILL: HTML -->
+        <div class="skills-cell">
+          <div class="skill__header">
+            <div class="skill__header--icon-wrapper">
+              <div class="skill__header--icon">
+                <svg class="skill-icon--svg" stroke="currentColor" fill="currentColor" stroke-width="0"
+                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="padding:6px;">
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path
+                    d="M3.5 9H5v6H3.5v-2.5h-2V15H0V9h1.5v2h2V9zm14 0H13c-.55 0-1 .45-1 1v5h1.5v-4.5h1V14H16v-3.51h1V15h1.5v-5c0-.55-.45-1-1-1zM11 9H6v1.5h1.75V15h1.5v-4.5H11V9zm13 6v-1.5h-2.5V9H20v6h4z">
+                  </path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="skill__body">
+            <div class="skill__body--title">
+              <h3>HTML</h3>
+            </div>
+            <div class="skill__body--content">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis eius.
+            </div>
+          </div>
+        </div>
+        <!-- SKILL: CSS -->
+        <div class="skills-cell">
+          <div class="skill__header">
+            <div class="skill__header--icon-wrapper">
+              <div class="skill__header--icon">
+                <svg class="skill-icon--svg" stroke="currentColor" fill="currentColor" stroke-width="0"
+                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="padding:4px;">
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path
+                    d="M9.5 14v-1H11v.5h2v-1h-2.5c-.55 0-1-.45-1-1V10c0-.55.45-1 1-1h3c.55 0 1 .45 1 1v1H13v-.5h-2v1h2.5c.55 0 1 .45 1 1V14c0 .55-.45 1-1 1h-3c-.55 0-1-.45-1-1zm7.5 1h3c.55 0 1-.45 1-1v-1.5c0-.55-.45-1-1-1h-2.5v-1h2v.5H21v-1c0-.55-.45-1-1-1h-3c-.55 0-1 .45-1 1v1.5c0 .55.45 1 1 1h2.5v1h-2V13H16v1c0 .55.45 1 1 1zm-9-5c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-1H6.5v.5h-2v-3h2v.5H8v-1z">
+                  </path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="skill__body">
+            <div class="skill__body--title">
+              <h3>CSS</h3>
+            </div>
+            <div class="skill__body--content">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis eius.
+            </div>
+          </div>
+        </div>
+        <!-- SKILL: JS -->
+        <div class="skills-cell">
+          <div class="skill__header">
+            <div class="skill__header--icon-wrapper">
+              <div class="skill__header--icon">
+                <svg class="skill-icon--svg" stroke="currentColor" fill="currentColor" stroke-width="0"
+                  viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path
+                    d="M12 14v-1h1.5v.5h2v-1H13c-.55 0-1-.45-1-1V10c0-.55.45-1 1-1h3c.55 0 1 .45 1 1v1h-1.5v-.5h-2v1H16c.55 0 1 .45 1 1V14c0 .55-.45 1-1 1h-3c-.55 0-1-.45-1-1zM9 9v4.5H7.5v-1H6v1c0 .83.67 1.5 1.5 1.5H9c.83 0 1.5-.67 1.5-1.5V9H9z">
+                  </path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="skill__body">
+            <div class="skill__body--title">
+              <h3>JavaScript</h3>
+            </div>
+            <div class="skill__body--content">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis eius.
+            </div>
+          </div>
+        </div>
+        <!-- SKILL: REACT -->
+        <div class="skills-cell">
+          <div class="skill__header">
+            <div class="skill__header--icon-wrapper">
+
+              <div class="skill__header--icon">
+                <svg class="skill-icon--svg" style="padding:4px;" stroke="currentColor" fill="currentColor"
+                  stroke-width="0" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <g>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                    <path fill-rule="nonzero"
+                      d="M14.448 16.24a21.877 21.877 0 0 1-1.747 2.175c1.672 1.623 3.228 2.383 4.09 1.884.864-.498.983-2.225.414-4.484-.853.19-1.78.334-2.757.425zm-1.31.087a27.512 27.512 0 0 1-2.276 0c.377.492.758.948 1.138 1.364.38-.416.76-.872 1.138-1.364zm5.04-7.894c2.665.764 4.405 2.034 4.405 3.567 0 1.533-1.74 2.803-4.405 3.567.67 2.69.441 4.832-.886 5.598-1.328.767-3.298-.105-5.292-2.03-1.994 1.925-3.964 2.797-5.292 2.03-1.327-.766-1.557-2.908-.886-5.598-2.665-.764-4.405-2.034-4.405-3.567 0-1.533 1.74-2.803 4.405-3.567-.67-2.69-.441-4.832.886-5.598 1.328-.767 3.298.105 5.292 2.03 1.994-1.925 3.964-2.797 5.292-2.03 1.327.766 1.557 2.908.886 5.598zm-.973-.248c.57-2.26.45-3.986-.413-4.484-.863-.499-2.419.261-4.09 1.884.591.643 1.179 1.374 1.746 2.175.978.09 1.904.234 2.757.425zm-10.41 7.63c-.57 2.26-.45 3.986.413 4.484.863.499 2.419-.261 4.09-1.884a21.877 21.877 0 0 1-1.746-2.175 21.877 21.877 0 0 1-2.757-.425zm4.067-8.142a27.512 27.512 0 0 1 2.276 0A20.523 20.523 0 0 0 12 6.31c-.38.416-.76.872-1.138 1.364zm-1.31.087A21.877 21.877 0 0 1 11.3 5.585C9.627 3.962 8.07 3.202 7.209 3.701c-.864.498-.983 2.225-.414 4.484.853-.19 1.78-.334 2.757-.425zm4.342 7.52A25.368 25.368 0 0 0 15.787 12a25.368 25.368 0 0 0-1.893-3.28 25.368 25.368 0 0 0-3.788 0A25.368 25.368 0 0 0 8.213 12a25.368 25.368 0 0 0 1.893 3.28 25.368 25.368 0 0 0 3.788 0zm1.284-.131c.615-.08 1.2-.183 1.75-.304a20.523 20.523 0 0 0-.612-1.667 27.512 27.512 0 0 1-1.138 1.97zM8.822 8.85c-.615.08-1.2.183-1.75.304.17.536.374 1.094.612 1.667a27.512 27.512 0 0 1 1.138-1.97zm-1.75 5.994c.55.121 1.135.223 1.75.304a27.512 27.512 0 0 1-1.138-1.97c-.238.572-.442 1.13-.612 1.666zm-.978-.245c.261-.834.6-1.708 1.01-2.6-.41-.892-.749-1.766-1.01-2.6-2.242.637-3.677 1.604-3.677 2.6s1.435 1.963 3.677 2.6zm10.834-5.445c-.55-.121-1.135-.223-1.75-.304a27.511 27.511 0 0 1 1.138 1.97c.238-.572.442-1.13.612-1.666zm.978.245c-.261.834-.6 1.708-1.01 2.6.41.892.749 1.766 1.01 2.6 2.242-.637 3.677-1.604 3.677-2.6s-1.435-1.963-3.677-2.6zM12 13.88a1.88 1.88 0 1 1 0-3.76 1.88 1.88 0 0 1 0 3.76z">
+                    </path>
+                  </g>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="skill__body">
+            <div class="skill__body--title">
+              <h3>React</h3>
+            </div>
+            <div class="skill__body--content">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis eius.
+            </div>
+          </div>
+        </div>
+        <!-- SKILL: WEBPACK -->
+        <div class="skills-cell">
+          <div class="skill__header">
+            <div class="skill__header--icon-wrapper">
+
+              <div class="skill__header--icon">
+                <svg class="skill-icon--svg" stroke="currentColor" fill="currentColor" stroke-width="0" role="img"
+                  viewBox="0 0 24 24" style="padding:6px;" xmlns="http://www.w3.org/2000/svg">
+                  <title></title>
+                  <path
+                    d="M22.1987 18.498l-9.7699 5.5022v-4.2855l6.0872-3.3338 3.6826 2.117zm.6683-.6026V6.3884l-3.5752 2.0544v7.396zm-21.0657.6026l9.7699 5.5022v-4.2855L5.484 16.3809l-3.6826 2.117zm-.6683-.6026V6.3884l3.5751 2.0544v7.396zm.4183-12.2515l10.0199-5.644v4.1434L5.152 7.6586l-.0489.028zm20.8975 0l-10.02-5.644v4.1434l6.4192 3.5154.0489.028 3.5518-2.0427zm-10.8775 13.096l-6.0056-3.2873V8.9384l6.0054 3.4525v6.349zm.8575 0l6.0053-3.2873V8.9384l-6.0053 3.4525zM5.9724 8.1845l6.0287-3.3015L18.03 8.1845l-6.0288 3.4665z">
+                  </path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="skill__body">
+            <div class="skill__body--title">
+              <h3>Webpack</h3>
+            </div>
+            <div class="skill__body--content">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis eius.
+            </div>
+          </div>
+        </div>
+        <!-- SKILL: GIT -->
+        <div class="skills-cell">
+          <div class="skill__header">
+            <div class="skill__header--icon-wrapper">
+
+              <div class="skill__header--icon">
+                <svg class="skill-icon--svg" stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1"
+                  viewBox="0 0 32 32" style="padding:2px;" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M26.852 15.281l-9.848-9.848c-0.567-0.567-1.487-0.567-2.054 0l-2.045 2.045 2.594 2.594c0.603-0.204 1.294-0.067 1.775 0.413 0.483 0.483 0.619 1.181 0.41 1.786l2.5 2.5c0.605-0.209 1.303-0.074 1.786 0.41 0.675 0.675 0.675 1.769 0 2.444s-1.769 0.675-2.445 0c-0.508-0.508-0.633-1.254-0.376-1.88l-2.332-2.332v6.136c0.164 0.082 0.32 0.19 0.457 0.327 0.675 0.675 0.675 1.769 0 2.445-0.675 0.675-1.77 0.675-2.444 0-0.675-0.676-0.675-1.77 0-2.445 0.167-0.167 0.36-0.293 0.566-0.377v-6.193c-0.206-0.084-0.399-0.209-0.566-0.377-0.511-0.511-0.634-1.262-0.372-1.889l-2.557-2.558-6.753 6.752c-0.567 0.568-0.567 1.488 0 2.055l9.849 9.848c0.567 0.567 1.486 0.567 2.054 0l9.802-9.802c0.567-0.567 0.567-1.488 0-2.055z">
+                  </path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="skill__body">
+            <div class="skill__body--title">
+              <h3>Git</h3>
+            </div>
+            <div class="skill__body--content">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis eius.
+            </div>
+          </div>
+        </div>
+        <!-- SKILL: WORDPRESS -->
+        <div class="skills-cell">
+          <div class="skill__header">
+            <div class="skill__header--icon-wrapper">
+
+              <div class="skill__header--icon">
+                <svg class="skill-icon--svg" stroke="currentColor" style="padding:6px;" fill="currentColor"
+                  stroke-width="0" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <title></title>
+                  <path
+                    d="M21.469 6.825c.84 1.537 1.318 3.3 1.318 5.175 0 3.979-2.156 7.456-5.363 9.325l3.295-9.527c.615-1.54.82-2.771.82-3.864 0-.405-.026-.78-.07-1.11m-7.981.105c.647-.03 1.232-.105 1.232-.105.582-.075.514-.93-.067-.899 0 0-1.755.135-2.88.135-1.064 0-2.85-.15-2.85-.15-.585-.03-.661.855-.075.885 0 0 .54.061 1.125.09l1.68 4.605-2.37 7.08L5.354 6.9c.649-.03 1.234-.1 1.234-.1.585-.075.516-.93-.065-.896 0 0-1.746.138-2.874.138-.2 0-.438-.008-.69-.015C4.911 3.15 8.235 1.215 12 1.215c2.809 0 5.365 1.072 7.286 2.833-.046-.003-.091-.009-.141-.009-1.06 0-1.812.923-1.812 1.914 0 .89.513 1.643 1.06 2.531.411.72.89 1.643.89 2.977 0 .915-.354 1.994-.821 3.479l-1.075 3.585-3.9-11.61.001.014zM12 22.784c-1.059 0-2.081-.153-3.048-.437l3.237-9.406 3.315 9.087c.024.053.05.101.078.149-1.12.393-2.325.609-3.582.609M1.211 12c0-1.564.336-3.05.935-4.39L7.29 21.709C3.694 19.96 1.212 16.271 1.211 12M12 0C5.385 0 0 5.385 0 12s5.385 12 12 12 12-5.385 12-12S18.615 0 12 0">
+                  </path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="skill__body">
+            <div class="skill__body--title">
+              <h3>Wordpress</h3>
+            </div>
+            <div class="skill__body--content">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis eius.
+            </div>
+          </div>
+        </div>
+        <!-- SKILL: ADOBE -->
+        <div class="skills-cell">
+          <div class="skill__header">
+            <div class="skill__header--icon-wrapper">
+              <div class="skill__header--icon">
+                <svg class="skill-icon--svg" stroke="currentColor" fill="currentColor" style="padding:6px;"
+                  stroke-width="0" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <title></title>
+                  <path
+                    d="M13.966 22.624l-1.69-4.281H8.122l3.892-9.144 5.662 13.425zM8.884 1.376H0v21.248zm15.116 0h-8.884L24 22.624Z">
+                  </path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="skill__body">
+            <div class="skill__body--title">
+              <h3>Adobe</h3>
+            </div>
+            <div class="skill__body--content">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis eius.
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end :: SKILLS -->
+    </div>
+    <!--------------------->
+    <!--------------------->
+    <aside class="section-divider"></aside>
+    <aside class="section-gradient-left"></aside>
+    <aside class="section-gradient-right"></aside>
+    <!--------------------->
+  </main>
+  <!--------------------->
+  <footer class="footer">
+    <span>original: &nbsp;</span>
+    <a href="https://turbo.build/repo" title="turbo.build" target="_blank" rel="noopener noreferrer">
+      turbo.build
+    </a>
+  </footer>
+  <!--------------------->
+</body>
+<script>
+      const handleTheme = () => {
+      const moon = document.querySelector(".moon");
+      const sun = document.querySelector(".sun");
+      const colorSchemeMeta = document.querySelector('meta[name="color-scheme"]');
+      if (sun.classList.contains("hide-svg")) {
+        sun.classList.remove("hide-svg");
+        moon.classList.add("hide-svg");
+        document.body.setAttribute("class", "body theme__light");
+        colorSchemeMeta.setAttribute("content", "light");
+      } else {
+        sun.classList.add("hide-svg");
+        moon.classList.remove("hide-svg");
+        document.body.setAttribute("class", "body theme__dark");
+        colorSchemeMeta.setAttribute("content", "dark");
+      }
+    };
+
+    const handleDefaultTheme = () => {
+      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return;
+      } else {
+        handleTheme();
+      }
+    };
+
+    document.querySelector(".change-theme--btn").addEventListener("click", handleTheme);
+    window.addEventListener("load", handleDefaultTheme, { once: true });
+</script>
+</html>
