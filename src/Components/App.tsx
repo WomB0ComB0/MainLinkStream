@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NotFound from './404'
 import {FallBack as Offline} from './fallback'
 import ScreenLoader from './ScreenLoader'
@@ -21,7 +22,7 @@ const App = () => {
   const handleOffline = () => { setIsOnline(false); };
   return (
     <>
-     
+    {/* Search bar */}
     </>
   );
 };
