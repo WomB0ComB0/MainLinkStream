@@ -2,24 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/Main-Link-Stream/src/assets/SVGs/logo.svg" />
-    <link rel="manifest" href="/Main-Link-Stream/PWA/manifest.json" />
-    <link rel="apple-touch-icon" href="/Main-Link-Stream/src/assets/SVGs/logo.svg" />
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
-    <meta name="theme-color" media="(prefers-color-scheme: dark)"  content="black">
-    <!-- <meta name="theme-color" content="#ffffff" />  Change to #[theme color] -->
+    <link rel="icon" type="image/svg+xml" href="/PWA/svgs/MyLogo.svg" />
+    <link rel="manifest" href="/PWA/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Link Stream</title>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/Main-Link-Stream/src/main.tsx"></script>
-    <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", function () {
-          navigator.serviceWorker.register("/service-worker.js");
-        });
-      }
-    </script>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"> 
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

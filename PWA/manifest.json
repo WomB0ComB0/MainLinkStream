@@ -1,63 +1,66 @@
 {
-    "name": "Link Stream",
-    "short_name": "MLS",
-    "theme_color": "#000000",
-    "start_url": "/index.html",
-    "description": "Central hub for all your links",
+    "name": "Mike Odnis | Portfolio",
+    "short_name": "Mike Odnis",
+    "theme_color": "#BA9BDD",
+    "background_color": "#560BAD",
+    "start_url": "/",
+    "description": "Mike Odnis' portfolio. Undergraduate, Computer Science student at Farmingdale State College.",
     "scope": "/",
     "dir": "ltr",
     "orientation": "portrait-primary",
-    "display_override": ["browser","minimal-ui","fullscreen"],
+    "display_override": ["minimal-ui","browser","fullscreen"],
     "display": "standalone",
-    "splash_pages":[
-        {
-            "src": "Come back Later",
-            "sizes": "any",
-            "type": "image/png",
-            "density": "",
-            "orientation": "protrait",
-            "platform": "any",
-            "theme_color": "#000000",
-            "background_color": "#ffffff"
-        }
-    ],
     "icons": [
         {
-            "src": "**/logo.svg",
+            "src": "./svgs/MyLogo.svg",
             "type": "image/svg+xml",
             "sizes": "any",
-            "purpose": "maskable any"
-        }
-    ],
-    "screenshots": [
+            "purpose": "maskable"
+        },        
         {
-            "src": "Come back Later",
+            "src": "./images/icon-72x72.png",
             "type": "image/png",
-            "sizes": "any",
-            "purpose": "",
-            "form_factor": "any"   
-        }
-    ],  
-    "webapp": {
-        "name": "Link Stream",
-        "short_name": "MLS",
-        "description": "Central hub for all of my (Mike Odnis') links.",
-        "theme_color": "#000000",
-        "background_color": "#ffffff",
-        "icons": {
-            "src": "**/logo.svg",
-            "type": "image/svg+xml",
-            "sizes": "any",
-            "purpose": "maskable any"
+            "sizes": "72x72"
         },
-        "scope": "/",
-        "start_url": "/index.html",
-        "display": "standalone",
-        "iarc_rating_id": "E"
-    },
-    "serviceworker": {
-        "src": "**/service-worker.js",
-        "use_cache": true
-    },
-    "prefer_related_applications": false
+        {
+            "src": "./images/icon-96x96.png",
+            "type": "image/png",
+            "sizes": "96x96"
+        },
+        {
+            "src": "./images/icon-128x128.png",
+            "type": "image/png",
+            "sizes": "128x128"
+        },
+        {
+            "src": "./images/icon-144x144.png",
+            "type": "image/png",
+            "sizes": "144x144"
+        },
+        {
+            "src": "./images/icon-152x152.png",
+            "type": "image/png",
+            "sizes": "152x152"
+        },
+        {
+            "src": "./images/icon-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "./images/icon-256x256.png",
+            "type": "image/png",
+            "sizes": "256x256"
+        },
+        {
+            "src": "./images/icon-384x384.png",
+            "type": "image/png",
+            "sizes": "384x384"
+        },
+        {
+            "src": "./images/icon-512x512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
 }

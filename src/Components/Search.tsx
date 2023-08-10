@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
+import { Result } from '../types';
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState<Result[]>([]);
   const [searchResultsLoading, setSearchResultsLoading] = useState(false);
   const [searchResultsError, setSearchResultsError] = useState(false);
 

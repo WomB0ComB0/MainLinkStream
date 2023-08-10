@@ -1,7 +1,7 @@
 import { Navbar, Container, Image } from 'react-bootstrap'
 export default function NavBar() {
   return (
-    <header>
+    <header className=''>
       <Navbar bg='' variant=''>
         <Container>
           <Navbar.Brand href=".">
