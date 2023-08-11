@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import {FallBack as Offline} from './fallback'
 import ScreenLoader from './ScreenLoader'
 import { supabase } from '../../src/client'
@@ -41,20 +41,24 @@ const App = () => {
   }, [])
   const AppContainer = () => {
     return (
-      <>
+      <React.Fragment>
         Proof that the page is being rendered:
+        {/* Grid cols */}
+        <div className=''>
+
+        </div>
         {links.map((a) => (
           <p key={a.id}>
             {a.name} 
           </p>
         ))}
-      </>
+      </React.Fragment>
     )
   }
   return (
-    <>
+    <section className='w-full h-screen'>
       {isLoading ? <ScreenLoader /> : isOnline ? <AppContainer /> : <Offline />}
-    </>
+    </section>
   );
 };
 export default App

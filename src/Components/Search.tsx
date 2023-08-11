@@ -18,7 +18,6 @@ const Search = () => {
     }
     setSearchResultsLoading(false);
   };
-
   return (
     <div>
       <input
