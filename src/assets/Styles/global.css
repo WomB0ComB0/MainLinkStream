@@ -1,26 +1,45 @@
-* {
+html {
   scroll-behavior:smooth;
   transition:0.25s all ease;
   list-style:none;
   text-decoration: none;
+  background-color: #171717;
 }
 *, *::before, *::after {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  overflow:hidden;
-}
+  box-sizing: border-box;}
 
-@media screen and (max-width: 320px) {/* styles for screens smaller than 320px; */}
-@media screen and (min-width: 321px) and (max-width: 480px) {/* styles for screens between 321px and 480px; */}
-@media screen and (min-width: 481px) and (max-width: 768px) {/* styles for screens between 481px and 768px; */}
-@media screen and (min-width: 769px) and (max-width: 1024px) {/* styles for screens between 769px and 1024px; */}
-@media screen and (min-width: 1025px) and (max-width: 1280px) {/* styles for screens between 1025px and 1280px; */}
-@media screen and (min-width: 1281px) and (max-width: 1440px) {/* styles for screens between 1281px and 1440px; */}
-@media screen and (min-width: 1441px) and (max-width: 1680px) {/* styles for screens between 1441px and 1680px; */}
-@media screen and (min-width: 1681px) and (max-width: 1920px) {/* styles for screens between 1681px and 1920px; */}
-@media screen and (min-width: 1921px) and (max-width: 2560px) {/* styles for screens between 1921px and 2560px; */}
-@media screen and (min-width: 2561px) {/* styles for screens larger than 2561px; */}
+@media screen and (max-width: 320px) {
+  /* styles for screens smaller than 320px; */
+}
+@media screen and (min-width: 321px) and (max-width: 480px) {
+  /* styles for screens between 321px and 480px; */
+}
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  /* styles for screens between 481px and 768px; */
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  /* styles for screens between 769px and 1024px; */
+}
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+  /* styles for screens between 1025px and 1280px; */
+}
+@media screen and (min-width: 1281px) and (max-width: 1440px) {
+  /* styles for screens between 1281px and 1440px; */
+}
+@media screen and (min-width: 1441px) and (max-width: 1680px) {
+  /* styles for screens between 1441px and 1680px; */
+}
+@media screen and (min-width: 1681px) and (max-width: 1920px) {
+  /* styles for screens between 1681px and 1920px; */
+}
+@media screen and (min-width: 1921px) and (max-width: 2560px) {
+  /* styles for screens between 1921px and 2560px; */
+}
+@media screen and (min-width: 2561px) {
+  /* styles for screens larger than 2561px; */
+}
 /* Dark mode */
 @media(prefers-color-scheme:dark){}
 /* Light mode */

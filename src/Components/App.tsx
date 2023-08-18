@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import {FallBack as Offline} from './fallback'
-import ScreenLoader from './ScreenLoader'
-import { supabase } from '../../src/client'
-import { Data } from '../types';
-import CardContainer from './CardContainer';
+import {FallBack as Offline} from './browser/fallback'
+import ScreenLoader from './browser/ScreenLoader'
+import Search from './Search';
 const App = () => {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [isLoading, setIsLoading] = useState(true);
-  const [links, setLinks] = useState<Data[]>([]);
+  const [roles, setRoles] = useState<String[] | null>(null);
   useEffect(() =>{
     setTimeout(() => {
       setIsLoading(false);
@@ -19,44 +17,40 @@ const App = () => {
       window.removeEventListener('offline', handleOffline);
     };
   },[])
+  // useEffect(() => {
+  //   const text = ['Developer', 'Designer', 'Creator', 'Student'];
+  //   loopText(text);
+  // }, []);
+  // const loopText = (text: string[]) => {
+  //   let i = 0;
+  //   const interval = setInterval(() => {
+  //     setRoles([text[i]]);
+  //     i = (i + 1) % text.length;
+  //   }, 2000);
+  //   return () => clearInterval(interval);
+  // };
   const handleOnline = () => { setIsOnline(true); };
   const handleOffline = () => { setIsOnline(false); };
-  useEffect(()=>{
-    async function fetchLinks() {
-      try {
-        const {data, error} = await supabase
-          .from('links')
-          .select('*')
-          .order('id', { ascending: true })
-        if (error) {
-          throw new Error(error.message)
-        }
-        setLinks(data)
-        console.log(data)
-      } catch (error) {
-        console.error('Error fetching data:', error)
-      }
-    }
-    fetchLinks()
-  }, [])
+  const Header = () => {
+    return (
+      <div className='flex items-center justify-center'>
+        <h1 className='px-10 text-3xl font-semibold select-none md:text-5xl lg:text-6xl sm:text-4xl'>
+          <span className='mr-3'>I am a</span>
+          {!roles ? 'Developer' : roles}
+        </h1>
+      </div>
+    )
+  }
   const AppContainer = () => {
     return (
       <React.Fragment>
-        Proof that the page is being rendered:
-        {/* Grid cols */}
-        <div className=''>
-
-        </div>
-        {links.map((a) => (
-          <p key={a.id}>
-            {a.name} 
-          </p>
-        ))}
+        <Header />
+        <Search />
       </React.Fragment>
     )
   }
   return (
-    <section className='w-full h-screen'>
+    <section className='w-full h-screen ml-auto mr-auto '>
       {isLoading ? <ScreenLoader /> : isOnline ? <AppContainer /> : <Offline />}
     </section>
   );

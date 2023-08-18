@@ -5,6 +5,6 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [
     react(),
-    VitePWA({registerType: 'autoUpdate', includeAssets: ['favicon.svg', 'favicon.ico', 'robots.txt', ]})
+    VitePWA({registerType: 'autoUpdate', includeAssets: ['favicon.ico', 'robots.txt', ]})
   ],
 })
