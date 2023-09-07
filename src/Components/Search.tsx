@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Links } from '../constants';
 import CardContainer from './CardContainer';
-import SearchIcon from './icons/SearchIcon';
+import SearchIcon from './browser/icons/SearchIcon';
  import FeaturedContainer from './FeaturedContainer';
 const Search = () => {
   const [searchParams, setSearchParams] = useSearchParams();
