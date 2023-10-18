@@ -1,15 +1,18 @@
-declare global {
-  interface Window {
-    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose
-  }
+// declare global {
+//   namespace JSX {
+//     interface IntrinsicElements {
+//       [elemName: string]: any;
+//     }
+//   }
+// }
+
+type StylingProps = {
+  style?: React.CSSProperties;
+  className?: string;
+};
+interface SVGProps extends StylingProps {
+  SVG?: React.SVGAttributes<SVGElement>;
 }
-declare global {
-    namespace JSX {
-      interface IntrinsicElements {
-        [elemName: string]: any;
-      }
-    }
-  }
 type Id = string | number;
 interface LoaderData {
     q: string;

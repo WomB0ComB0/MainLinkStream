@@ -1,6 +1,7 @@
-import DevToIcon from "./DevToIcon"
-import DiscordIcon from "./DiscordIcon"
-import InstagramIcon from "./InstagramIcon"
-import MediumIcon from "./MediumIcon"
-import TwitterIcon from "./TwitterIcon"
+import { lazy } from 'react';
+const DevToIcon = lazy(() => import( "./DevToIcon"))
+const DiscordIcon = lazy(() => import( "./DiscordIcon"))
+const InstagramIcon = lazy(() => import( "./InstagramIcon"))
+const MediumIcon = lazy(() => import( "./MediumIcon"))
+const TwitterIcon = lazy(() => import( "./TwitterIcon"))
 export { DevToIcon, DiscordIcon, InstagramIcon, MediumIcon, TwitterIcon }

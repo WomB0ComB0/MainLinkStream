@@ -1,7 +1,8 @@
-import FCCIcon from "./FCCIcon"
-import GeekForGeeksIcon from "./GeekForGeeksIcon"
-import HackerRankIcon from "./HackerRankIcon"
-import LeetCodeIcon from "./LeetCodeIcon"
-import MicrosoftLearnIcon from "./MicrosoftLearnIcon"
-import SoloLearnIcon from "./SoloLearnIcon"
+import { lazy } from 'react'
+const FCCIcon = lazy(() => import("./FCCIcon"))
+const GeekForGeeksIcon = lazy(() => import("./GeekForGeeksIcon"))
+const HackerRankIcon = lazy(() => import("./HackerRankIcon"))
+const LeetCodeIcon = lazy(() => import("./LeetCodeIcon"))
+const MicrosoftLearnIcon = lazy(() => import("./MicrosoftLearnIcon"))
+const SoloLearnIcon = lazy(() => import("./SoloLearnIcon"))
 export { FCCIcon, GeekForGeeksIcon, HackerRankIcon, LeetCodeIcon, MicrosoftLearnIcon, SoloLearnIcon}

@@ -6,13 +6,17 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [
     react(),
-    VitePWA(
-      {
-        registerType: 'autoUpdate', includeAssets: [
-          'favicon.ico', 'robots.txt',
-        ],
-      }
-    )
+    VitePWA({
+      workbox: {
+        cleanupOutdatedCaches: true,
+        globPatterns: ["**/*"]
+      },
+      registerType: 'autoUpdate',
+      injectRegister: 'auto',
+      includeAssets: [
+        "**/*"
+      ],
+    }),
   ],
   resolve: {
     alias:{
