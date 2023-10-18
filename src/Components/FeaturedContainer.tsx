@@ -1,13 +1,13 @@
 import React from 'react'
 import { Card } from 'flowbite-react'
-const FeaturedContainer = ({featured, id, svg, link, name}: Data) => {
+const FeaturedContainer = ({featured, id, sourceSVG, link, name}: Data) => {
   return (
     <React.Fragment>
       {featured && (
         <a href={link} key={id} className='' rel={`noopener noreferrer`} id={`${id}`}>
           <Card className=''>
             <picture className=''>
-              <img src={svg} alt={`${name} image`} className=''/>
+              <img src={sourceSVG} alt={`${name} image`} className=''/>
             </picture>
           </Card>
           <p className=''>
