@@ -1,5 +1,5 @@
 import { cn } from "../../../lib/utils";
-const SearchIcon = ({props}: {props: SVGProps}) => {
+export default function SearchIcon({props}: {props: SVGProps}) {
   const { className, SVG } = props;
   return (
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={`${cn('w-6 h-6 cursor-pointer', className)}`} {...SVG}>
@@ -7,4 +7,3 @@ const SearchIcon = ({props}: {props: SVGProps}) => {
     </svg>
   )
 }
-export default SearchIcon

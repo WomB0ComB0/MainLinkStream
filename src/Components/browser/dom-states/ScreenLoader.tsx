@@ -1,4 +1,3 @@
-import '../assets/Styles/global.css'
 const ScreenLoader = () => {
   return (
     <div className="z-50 flex items-center justify-center h-screen bg-[rgb(36,36,36)]">

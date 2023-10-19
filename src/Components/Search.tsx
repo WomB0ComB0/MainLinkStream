@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Links } from '../constants';
 import CardContainer from './CardContainer';
-import SearchIcon from './browser/icons/SearchIcon';
+import { SearchIcon } from './browser/icons/index';
  import FeaturedContainer from './FeaturedContainer';
 const Search = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -23,7 +23,7 @@ const Search = () => {
     <div className=''>
       <div className=''>
         <form role="search" onSubmit={handleSearchSubmit} autoComplete='on' className='flex items-center justify-center max-w-2xl px-3 py-1 mx-auto space-x-2 transition-transform bg-blue-300 min-w-fit rounded-xl'>
-          <SearchIcon/>
+          <SearchIcon />
           <input
             aria-label="Search links"
             placeholder="Search"

@@ -1,5 +1,5 @@
-import React from 'react'
-export const FallBack = () => {
+import React, { FC } from 'react'
+const FallBack:  FC = () => {
     return (
       <React.Component>
         <div className="flex flex-col items-center justify-center h-screen">
@@ -9,3 +9,4 @@ export const FallBack = () => {
       </React.Component>
     )
 }
+export default FallBack;

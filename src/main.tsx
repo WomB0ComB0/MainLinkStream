@@ -3,7 +3,7 @@ import 'flowbite';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ReactDOM from 'react-dom/client'
 import { ErrorHandlerProvider } from './hooks/useErrorHandler';
-import NotFound from './Components/browser/404';
+import NotFound from './Components/browser/dom-states/404';
 import App from './Components/App'
 import './assets/Styles/global.css'
 import './assets/Styles/index.css'

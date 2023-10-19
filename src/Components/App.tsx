@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import {FallBack as Offline} from './browser/fallback'
-import ScreenLoader from './browser/ScreenLoader'
+import { FallBack as Offline} from './browser/dom-states/index'
+import ScreenLoader from './browser/dom-states/ScreenLoader'
 import Search from './Search';
 const App = () => {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
