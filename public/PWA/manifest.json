@@ -1,10 +1,10 @@
 {
-    "name": "Mike Odnis | Portfolio",
+    "name": "Mike Odnis | Links",
     "short_name": "Mike Odnis",
     "theme_color": "#BA9BDD",
     "background_color": "#560BAD",
     "start_url": "/",
-    "description": "Mike Odnis' portfolio. Undergraduate, Computer Science student at Farmingdale State College.",
+    "description": "Mike Odnis' internet hub. Undergraduate, Computer Science student at Farmingdale State College.",
     "scope": "/",
     "dir": "ltr",
     "orientation": "portrait-primary",
