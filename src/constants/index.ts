@@ -5,7 +5,7 @@ export const Links: Data[] = [
     name: "Github",
     link: 'https://github.com/WomB0ComB0',
     type: "Development",
-    svg: icons.development.GithubIcon,
+    sourceSVG: icons.development.GithubIcon,
     description: "",
     featured: true
   },
@@ -14,7 +14,7 @@ export const Links: Data[] = [
     name: "Gitlab",
     link: 'https://gitlab.com/WomB0ComB0',
     type: "Development",
-    svg: icons.development.GitLabIcon,
+    sourceSVG: icons.development.GitLabIcon,
     description: "",
     featured: false
   },
@@ -23,7 +23,7 @@ export const Links: Data[] = [
     name: "Instagram",
     link: 'https://www.instagram.com/_xmike__/',
     type: "Socials",
-    svg: icons.socials.InstagramIcon,
+    sourceSVG: icons.socials.InstagramIcon,
     description: "",
     featured: false
   },
@@ -32,7 +32,7 @@ export const Links: Data[] = [
     name: "Twitter",
     link: 'https://twitter.com/OdnisMike',
     type: "Socials",
-    svg: icons.socials.TwitterIcon,
+    sourceSVG: icons.socials.TwitterIcon,
     description: "",
     featured: false
   },
@@ -41,7 +41,7 @@ export const Links: Data[] = [
     name: "Discord",
     link: 'https://discordapp.com/users/194258098402230272',
     type: "Socials",
-    svg: icons.socials.DiscordIcon,
+    sourceSVG: icons.socials.DiscordIcon,
     description: "",
     featured: false
   }, 
@@ -50,7 +50,7 @@ export const Links: Data[] = [
     name: "DevTo",
     link: 'https://dev.to/womb0comb0',
     type: "Socials",
-    svg: icons.socials.DevToIcon,
+    sourceSVG: icons.socials.DevToIcon,
     description: "",
     featured: false
   },
@@ -59,7 +59,7 @@ export const Links: Data[] = [
     name: "Medium",
     link: 'https://medium.com/@mikeodnis3242004',
     type: "Socials",
-    svg: icons.socials.MediumIcon,
+    sourceSVG: icons.socials.MediumIcon,
     description: "",
     featured: false
   },
@@ -68,7 +68,7 @@ export const Links: Data[] = [
     name: "LinkedIn",
     link: 'https://linkedin.com/in/mikeodnis',
     type: "Networking",
-    svg: icons.networking.LinkedInIcon,
+    sourceSVG: icons.networking.LinkedInIcon,
     description: "",
     featured: false
   },
@@ -77,7 +77,7 @@ export const Links: Data[] = [
     name: "CodersRank",
     link: 'https://profile.codersrank.io/user/womb0comb0',
     type: "Networking",
-    svg: icons.networking.CodersRankIcon,
+    sourceSVG: icons.networking.CodersRankIcon,
     description: "",
     featured: false
   },
@@ -86,7 +86,7 @@ export const Links: Data[] = [
     name: "Dribble",
     link: 'https://dribbble.com/WomB0ComB0',
     type: "Design",
-    svg: icons.design.DribbleIcon,
+    sourceSVG: icons.design.DribbleIcon,
     description: "",
     featured: false
   }, 
@@ -95,7 +95,7 @@ export const Links: Data[] = [
     name: "Codepen",
     link: 'https://codepen.io/womb0comb0',
     type: "Design",
-    svg: icons.design.CodePenIcon,
+    sourceSVG: icons.design.CodePenIcon,
     description: "",
     featured: false
   },
@@ -104,7 +104,7 @@ export const Links: Data[] = [
     name: "Leetcode",
     link: 'https://leetcode.com/WomB0ComB0/',
     type: "Learning",
-    svg: icons.learning.LeetCodeIcon,
+    sourceSVG: icons.learning.LeetCodeIcon,
     description: "",
     featured: false
   },
@@ -113,7 +113,7 @@ export const Links: Data[] = [
     name: "HackerRank",
     link: 'https://www.hackerrank.com/airwolf635',
     type: "Learning",
-    svg: icons.learning.HackerRankIcon,
+    sourceSVG: icons.learning.HackerRankIcon,
     description: "",
     featured: false
   },
@@ -122,7 +122,7 @@ export const Links: Data[] = [
     name: "Microsoft Learning",
     link: 'https://learn.microsoft.com/en-us/users/mikeodnis/',
     type: "Learning",
-    svg: icons.learning.MicrosoftLearnIcon,
+    sourceSVG: icons.learning.MicrosoftLearnIcon,
     description: "",
     featured: false
   },
@@ -131,7 +131,7 @@ export const Links: Data[] = [
     name: "SoloLearn",
     link: 'https://www.sololearn.com/profile/24459722',
     type: "Learning",
-    svg: icons.learning.SoloLearnIcon,
+    sourceSVG: icons.learning.SoloLearnIcon,
     description: "",
     featured: false
   },
@@ -140,7 +140,7 @@ export const Links: Data[] = [
     name: "FreeCodeCamp",
     link: 'https://www.freecodecamp.org/WomB0ComB0',
     type: "Learning",
-    svg: icons.learning.FCCIcon,
+    sourceSVG: icons.learning.FCCIcon,
     description: "",
     featured: false
   }, 
