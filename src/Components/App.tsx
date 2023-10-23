@@ -9,7 +9,7 @@ const App = () => {
   useEffect(() =>{
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 99999);
     window.addEventListener('online', handleOnline);
     window.addEventListener('offline', handleOffline);
     return () => {
@@ -43,10 +43,10 @@ const App = () => {
   }
   const AppContainer = () => {
     return (
-      <React.Fragment>
+      <>
         <Header />
         <Search />
-      </React.Fragment>
+      </>
     )
   }
   return (

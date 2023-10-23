@@ -1,1 +1,0 @@
-import { SVGAttributes } from 'react'
