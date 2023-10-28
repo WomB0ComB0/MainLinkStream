@@ -1,11 +1,10 @@
-import { lazy } from 'react'
-const Article = lazy(() => import('./Article'))
-const Aside = lazy(() => import('./Aside'))
-const Div = lazy(() => import('./Div'))
-const Footer = lazy(() => import('./Footer'))
-const Main = lazy(() => import('./Main'))
-const Menu = lazy(() => import('./Menu'))
-const Nav = lazy(() => import('./Nav'))
-const Picture = lazy(() => import('./Picture'))
-const Section = lazy(() => import('./Section'))
+import Article from './Article';
+import Aside from './Aside';
+import Div from './Div';
+import Footer from './Footer';
+import Main from './Main';
+import Menu from './Menu';
+import Nav from './Nav';
+import Picture from './Picture';
+import Section from './Section';
 export { Article, Aside, Div, Footer, Main, Menu, Nav, Picture, Section }

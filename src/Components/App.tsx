@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { FallBack as Offline} from './browser/dom-states/index'
 import ScreenLoader from './browser/dom-states/ScreenLoader'
 import Search from './Search';

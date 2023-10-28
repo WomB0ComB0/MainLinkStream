@@ -46,7 +46,7 @@ const Search = () => {
               name={link.name}
               description={link.description}
               link={link.link}
-              image={link.image}
+              image={link.sourceSVG}
               featured={link.featured} 
               type={link.type}
             />

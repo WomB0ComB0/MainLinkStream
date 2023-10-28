@@ -1,5 +1,4 @@
 import React from 'react'
-import 'flowbite';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ReactDOM from 'react-dom/client'
 import { ErrorHandlerProvider } from './hooks/useErrorHandler';
@@ -8,7 +7,7 @@ import App from './Components/App'
 import './assets/Styles/global.css'
 import './assets/Styles/index.css'
 import './assets/Fonts/fonts.css'
-import { ThemeProvider } from './Components/providers/theme-provider';
+import { ThemeProvider } from './Components/providers/index';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <ErrorHandlerProvider>

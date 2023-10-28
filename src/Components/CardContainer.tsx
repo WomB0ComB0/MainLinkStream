@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 const CardContainer = (props: Data) => {
   const { id, name, description, link, sourceSVG: SVGComponent, type } = props
   return (

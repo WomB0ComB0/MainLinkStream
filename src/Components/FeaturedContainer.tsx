@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card } from 'flowbite-react'
+import { Card } from './ui/card'
 const FeaturedContainer = ({featured, id, sourceSVG, link, name}: Data) => {
   return (
     <React.Fragment>
@@ -7,12 +7,9 @@ const FeaturedContainer = ({featured, id, sourceSVG, link, name}: Data) => {
         <a href={link} key={id} className='' rel={`noopener noreferrer`} id={`${id}`}>
           <Card className=''>
             <picture className=''>
-              <img src={sourceSVG} alt={`${name} image`} className=''/>
+                <img src={sourceSVG?.toString()} alt={`${name} image`} className=''/>
             </picture>
           </Card>
-          <p className=''>
-            {name}
-          </p>
         </a>
       )}
     </React.Fragment>
