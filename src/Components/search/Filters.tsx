@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { formUrlQuery } from '../../utils/index';
 
-const links = ['all', 'Next 13', 'frontend', 'backend', 'fullstack'];
+const links = ['all', 'Development', 'Socials', 'Networking', 'Design', 'Learning'];
 
 const Filters = () => {
   const [active, setActive] = useState('');

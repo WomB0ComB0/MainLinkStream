@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card } from './ui/card';
+import { Card } from '../ui/card';
 
 const FeaturedContainer = ({ featured, id, sourceSVG, link, name }: Data) => (
   <React.Fragment>

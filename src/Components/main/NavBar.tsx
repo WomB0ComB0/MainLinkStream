@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable quote-props */
 import { useState } from 'react';
+import classnames from 'classnames';
 import { Twirl } from 'hamburger-react';
-import { Nav, Menu } from '../semantics/index';
+import { Nav, Menu, Div } from '../semantics/index';
 import { ModeToggle } from '../browser/dom-states/index';
 import { GlobeAltIcon, ChartBarIcon, BookOpenIcon } from '../browser/icons/main/index';
 import { NavLinks } from '../../constants';
@@ -58,12 +59,15 @@ backdrop-blur-lg`}
 const Sidebar = ({ isOpen, toggle }: { isOpen: boolean; toggle: () => void }): JSX.Element => (
   <>
     {' '}
-    <div
-      className="sidebar-container fixed left-0 z-10 grid h-full w-full justify-center overflow-hidden pt-[120px]"
-      style={{
-        opacity: `${isOpen ? '1' : '0'}`,
-        top: ` ${isOpen ? '0' : '-100%'}`,
-      }}
+    <Div
+      className={`sidebar-container fixed left-0 z-10 grid h-full w-full justify-center overflow-hidden pt-[120px] ${classnames(
+        {
+          'opacity-0': !isOpen,
+          'opacity-1': isOpen,
+          'top-0': isOpen,
+          '-top-full': !isOpen,
+        },
+      )}`}
     >
       <ul className={`sidebar-nav text-center text-xl leading-relaxed`}>
         {NavLinks.map(({ link, name }, index: IndexProps) => (
@@ -74,7 +78,7 @@ const Sidebar = ({ isOpen, toggle }: { isOpen: boolean; toggle: () => void }): J
           </li>
         ))}
       </ul>
-    </div>
+    </Div>
   </>
 );
 

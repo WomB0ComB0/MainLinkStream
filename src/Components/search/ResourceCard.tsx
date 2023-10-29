@@ -1,22 +1,32 @@
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
-
-interface Props {
-  id: string;
-  title: string;
-  image: string;
-  downloadNumber: number;
-  downloadLink: string;
-}
+import { Button } from "../ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "../ui/dialog";
+import { Input } from "../ui/input";
+import { Label } from "../ui/label";
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const ResourceCard = ({ id, title, image, downloadNumber, downloadLink }: Props) => (
+const ResourceCard = ({ id,
+  name,
+  link,
+  type,
+  sourceSVG,
+  description,
+  featured, }: Data) => (
   <Card className="w-full max-w-fit border-0 !bg-transparent sm:max-w-[356px]">
-    <a href={downloadLink} target="_blank" rel="noreferrer">
+    <a href={link} target="_blank" rel="noreferrer">
       <CardHeader className="flex-center flex-col gap-2.5 !p-0">
         <div className="w-full h-fit">
-          <img src={image} className="object-cover h-full rounded-md" width={384} height={440} alt={title} />
+          <img src={image} className="object-cover h-full rounded-md" width={384} height={440} alt={name} />
         </div>
-        <CardTitle className="w-full text-left text-white paragraph-semibold line-clamp-1">{title}</CardTitle>
+        <CardTitle className="w-full text-left text-white paragraph-semibold line-clamp-1">{name}</CardTitle>
       </CardHeader>
     </a>
     <CardContent className="p-0 mt-4 flex-between">

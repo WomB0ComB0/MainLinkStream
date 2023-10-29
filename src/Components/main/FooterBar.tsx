@@ -4,7 +4,17 @@ const FooterBar = () => {
   const today = new Date();
   const year = today.getFullYear();
   return (
-    <Footer class>
+    <Footer
+      className={`
+        flex
+        flex-row
+        justify-between
+        items-center
+        w-full
+        h-[70px]
+        px-[10px]
+      `}
+    >
       <Div>
         <p className={``}>
           Made with

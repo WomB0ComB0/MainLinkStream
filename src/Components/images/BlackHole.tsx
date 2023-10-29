@@ -7,13 +7,14 @@ export default function BlackHole({
   style,
 }: { height?: number | string; width?: number | string } & StylingProps) {
   return (
-  <img
-    src="/assets/images/blackhole.png"
-    className={cn('object-cover h-full ', className)}
-    style={style}
-    height={height}
-    width={width}
-    alt={`Black hole image`}
-  />
+    <img
+      src="/assets/images/blackhole.png"
+      className={cn('object-cover h-full ', className)}
+      style={style}
+      height={height}
+      width={width}
+      loading="eager"
+      alt={`Black hole image`}
+    />
   );
 }

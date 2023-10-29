@@ -17,21 +17,25 @@ const HeaderSection = () => {
     loopText(text);
   }, []);
   return (
-    <Header className={`
+    <Header
+      className={`
       w-full h-[90vh] relative flex flex-col justify-center items-center    
-    `}>
-      <Suspense fallback={(
-        <Picture
-          className={`
+    `}
+    >
+      <Suspense
+        fallback={
+          <Picture
+            className={`
             absolute h-full w-full
           `}
-        >
-          <BlackHole className={`
+          >
+            <BlackHole
+              className={`
             
           `}
-          />
-        </Picture>
-        )}
+            />
+          </Picture>
+        }
       >
         <video autoPlay muted loop className="rotate-180 absolute  h-full w-full left-0 z-[1] object-cover ">
           <source src="/blackhole.webm" type="video/webm" />

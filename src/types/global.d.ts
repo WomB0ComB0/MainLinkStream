@@ -55,3 +55,12 @@ type ThemeProviderState = {
 interface Links<T = string> extends Record<string, T> {}
 
 type IndexProps = string | number | null | undefined;
+
+interface SearchProps {
+  searchParams: { [key: string]: string | undefined };
+}
+
+interface HeaderProps {
+  query: string;
+  type: string;
+}

@@ -10,7 +10,7 @@ export default function GlobeAltIcon({ className, SVG }: Partial<SVGProps>) {
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
       {...SVG}
-      className={cn('', className)}
+      className={cn('w-4 h-4', className)}
     >
       <path
         strokeLinecap="round"

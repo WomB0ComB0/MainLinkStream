@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React from 'react';
-import { Article } from './semantics/index';
+import { Article } from '../semantics/index';
 
 const CardContainer = ({ id, name, description, link, sourceSVG: SVGComponent }: Data) => (
   <>

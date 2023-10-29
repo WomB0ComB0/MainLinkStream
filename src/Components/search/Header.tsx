@@ -1,13 +1,8 @@
-interface Props {
-  query: string;
-  category: string;
-}
-
-const Header = ({ query, category }: Props) => {
-  if (query && category) {
+const Header = ({ query, type }: HeaderProps) => {
+  if (query && type) {
     return (
       <h1 className="self-start heading3 text-white-800">
-        Search results for &quot;{query}&quot; in <span className="capitalize">{category}</span>
+        Search results for &quot;{query}&quot; in <span className="capitalize">{type}</span>
       </h1>
     );
   }
@@ -16,10 +11,10 @@ const Header = ({ query, category }: Props) => {
     return <h1 className="self-start heading3 text-white-800">Search results for &quot;{query}&quot;</h1>;
   }
 
-  if (category) {
+  if (type) {
     return (
       <h1 className="self-start heading3 text-white-800">
-        <span className="capitalize">{category}</span>
+        <span className="capitalize">{type}</span>
       </h1>
     );
   }

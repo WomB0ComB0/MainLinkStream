@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Links } from '../constants';
+import { Links } from '../../constants';
 import CardContainer from './CardContainer';
-import { SearchIcon } from './browser/icons/index';
+import { SearchIcon } from '../browser/icons/index';
 import FeaturedContainer from './FeaturedContainer';
-import { Section } from './semantics/index';
+import { Section } from '../semantics/index';
 
 const Search = () => {
   const [searchParams, setSearchParams] = useSearchParams();
