@@ -1,4 +1,3 @@
-import SemanticLayout from "./SemanticLayout";
-export {
-  SemanticLayout
-}
+import SemanticLayout from './SemanticLayout';
+
+export { SemanticLayout };

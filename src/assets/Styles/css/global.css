@@ -1,14 +1,17 @@
 html {
-  scroll-behavior:smooth;
-  transition:0.25s all ease;
-  list-style:none;
+  scroll-behavior: smooth;
+  transition: 0.25s all ease;
+  list-style: none;
   text-decoration: none;
   background-color: #171717;
 }
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;}
+  box-sizing: border-box;
+}
 
 @media screen and (max-width: 320px) {
   /* styles for screens smaller than 320px; */
@@ -41,19 +44,28 @@ html {
   /* styles for screens larger than 2561px; */
 }
 /* Dark mode */
-@media(prefers-color-scheme:dark){}
+@media (prefers-color-scheme: dark) {
+}
 /* Light mode */
-@media(prefers-color-scheme:light){}
+@media (prefers-color-scheme: light) {
+}
 /* No preference */
-@media(prefers-color-scheme:no-preference){}
+@media (prefers-color-scheme: no-preference) {
+}
 /* No support */
-@media not all and (prefers-color-scheme){}
+@media not all and (prefers-color-scheme) {
+}
 /* No support */
-@media not all and (prefers-color-scheme:dark){}
+@media not all and (prefers-color-scheme: dark) {
+}
 /* No support */
-@media not all and (prefers-color-scheme:light){}
+@media not all and (prefers-color-scheme: light) {
+}
 /* No support */
-@media not all and (prefers-color-scheme:no-preference){}
+@media not all and (prefers-color-scheme: no-preference) {
+}
 
-@media (prefers-reduced-motion: no-preference){}
-@media (prefers-reduced-motion: reduce){}
+@media (prefers-reduced-motion: no-preference) {
+}
+@media (prefers-reduced-motion: reduce) {
+}

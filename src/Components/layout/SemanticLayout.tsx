@@ -1,13 +1,14 @@
-import { PropsWithChildren } from "react";
-import { Nav, Footer } from "../semantics/index";
-const SemanticLayout = ({children}: PropsWithChildren) => {
-  return (
-    <>
-      <NavBar />
-      {children}
-      <Footer />
-    </>
-  )
-}
+import { PropsWithChildren } from 'react';
+import { Footer, NavBar } from '../main/index';
+import { StarsCanvas } from '../visuals/index';
 
-export default SemanticLayout
+const SemanticLayout = ({ children }: PropsWithChildren) => (
+  <>
+    <StarsCanvas />
+    <NavBar />
+    {children}
+    <Footer />
+  </>
+);
+
+export default SemanticLayout;

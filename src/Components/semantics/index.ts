@@ -7,4 +7,5 @@ import Menu from './Menu';
 import Nav from './Nav';
 import Picture from './Picture';
 import Section from './Section';
-export { Article, Aside, Div, Footer, Main, Menu, Nav, Picture, Section }
+
+export { Article, Aside, Div, Footer, Main, Menu, Nav, Picture, Section };

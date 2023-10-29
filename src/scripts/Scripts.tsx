@@ -1,9 +1,8 @@
-import config from "../data/config";
+import config from '../data/config';
+
 const Scripts = () => (
   <>
-    <script
-      src={`https://www.googletagmanager.com/gtag/js?id=${config.googleAnalyticsID}`}
-    />
+    <script src={`https://www.googletagmanager.com/gtag/js?id=${config.googleAnalyticsID}`} />
     <script
       id="gtag"
       dangerouslySetInnerHTML={{

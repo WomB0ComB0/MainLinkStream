@@ -1,9 +1,10 @@
 {
   "extends": [
-    "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
     "airbnb-base",
-    "plugin:react-hooks/recommended"
+    "plugin:react-hooks/recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
   ],
   "rules": {
     "import/no-extraneous-dependencies": "off",
@@ -20,16 +21,47 @@
     "consistent-return": "off",
     "no-alert": "off",
     "camelcase": "off",
-    "no-unused-expressions": ["error", { "allowTernary": true }],
-    "no-unused-vars": [
+    "react/react-in-jsx-scope": "off",
+    "import/prefer-default-export": "off",
+    "no-unused-expressions": [
       "error",
       {
-        "argsIgnorePattern": "_|(knex)",
-        "destructuredArrayIgnorePattern": "^_"
+        "allowTernary": true
       }
     ],
     "no-mixed-operators": "off",
     "prefer-const": "error",
-    "prettier": true
-  }
+    "prettier": "off",
+    "max-len": ["error", { "code": 150 }]
+  },
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "typescript": {}
+    }
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "react"],
+  "parserOptions": {
+    "ecmaVersion": 2023,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": "./tsconfig.json"
+  },
+  "overrides": [
+    {
+      "files": ["./src/Components/ui/**/*", "./src/Components/browser/icons/**/*"],
+      "rules": {
+        "max-len": "off"
+      }
+    }
+  ]
 }

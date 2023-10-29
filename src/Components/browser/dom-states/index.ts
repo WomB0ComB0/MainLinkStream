@@ -1,4 +1,6 @@
 import NotFound from './404';
 import ScreenLoader from './ScreenLoader';
 import FallBack from './fallback';
-export { NotFound, ScreenLoader, FallBack };
+import { ModeToggle } from './mode-toggle';
+
+export { NotFound, ScreenLoader, FallBack, ModeToggle };

@@ -1,4 +1,3 @@
-import LazyImageWrapper from "./LazyWrapper";
-export {
-  LazyImageWrapper
-}
+import LazyImageWrapper from './LazyWrapper';
+
+export { LazyImageWrapper };

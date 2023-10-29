@@ -1,20 +1,14 @@
-import { FC, memo } from 'react'
-import { SemanticProps } from '../../types/semantic-props'
-import { cn } from '../../lib/utils'
-import { motion } from 'framer-motion'
+import React, { memo } from 'react';
+import { motion } from 'framer-motion';
+import { SemanticProps } from '../../types/semantic-props';
+import { cn } from '../../lib/utils';
+
 function Picture({ framer, framerProps, attributes, key, style, className, children }: SemanticProps) {
-  type SectionMotionProps = typeof motion.picture extends React.FC<infer P>
-    ? P
-    : never;
+  type SectionMotionProps = typeof motion.picture extends React.FC<infer P> ? P : never;
   return (
     <>
       {framer ? (
-        <motion.picture
-          {...(framerProps as SectionMotionProps)}
-          className={cn('', className)}
-          style={style}
-          key={key}
-        >
+        <motion.picture {...(framerProps as SectionMotionProps)} className={cn('', className)} style={style} key={key}>
           {children}
         </motion.picture>
       ) : (
@@ -23,7 +17,7 @@ function Picture({ framer, framerProps, attributes, key, style, className, child
         </picture>
       )}
     </>
-  )
+  );
 }
 
-export default memo(Picture)
+export default memo(Picture);

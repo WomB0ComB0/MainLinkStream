@@ -1,4 +1,4 @@
 const config = {
-  googleAnalyticsID: '' 
-}
+  googleAnalyticsID: '',
+};
 export default config;
