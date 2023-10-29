@@ -1,7 +1,18 @@
 import React, { PropsWithChildren } from 'react';
 import { HTMLMotionProps } from 'framer-motion';
 
-type Semantics = 'header' | 'main' | 'footer' | 'section' | 'article' | 'aside' | 'nav' | 'picture' | 'figure';
+type Semantics =
+  | 'article'
+  | 'aside'
+  | 'div'
+  | 'figure'
+  | 'footer'
+  | 'header'
+  | 'main'
+  | 'menu'
+  | 'nav'
+  | 'picture'
+  | 'section';
 export interface SemanticProps extends PropsWithChildren {
   framer?: boolean;
   framerProps?: HTMLMotionProps<Semantics>;

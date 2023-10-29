@@ -8,7 +8,6 @@ import { SemanticLayout } from './layout/index';
 const App = () => {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [isLoading, setIsLoading] = useState(true);
-  const [roles, setRoles] = useState<string[] | null>(null);
   const handleOnline = () => {
     setIsOnline(true);
   };
@@ -26,29 +25,9 @@ const App = () => {
       window.removeEventListener('offline', handleOffline);
     };
   }, []);
-  const loopText = (text: string[]) => {
-    let i = 0;
-    const interval = setInterval(() => {
-      setRoles([text[i]]);
-      i = (i + 1) % text.length;
-    }, 2000);
-    return () => clearInterval(interval);
-  };
-  useEffect(() => {
-    const text = ['Developer', 'Designer', 'Creator', 'Student'];
-    loopText(text);
-  }, []);
-  const Header = () => (
-    <div className="flex items-center justify-center">
-      <h1 className="px-10 text-3xl font-semibold select-none md:text-5xl lg:text-6xl sm:text-4xl">
-        <span className="mr-3">I am a</span>
-        {!roles ? 'Developer' : roles}
-      </h1>
-    </div>
-  );
   const AppContainer = () => (
     <SemanticLayout>
-      <Header />
+      {/* <Header /> */}
       <Search />
     </SemanticLayout>
   );
