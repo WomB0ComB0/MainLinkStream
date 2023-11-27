@@ -1,7 +1,4 @@
-import { Filters,
-  Header,
-  ResourceCard,
-  SearchForm } from '../search/index';
+import { Filters, Header, ResourceCard, SearchForm } from '../search/index';
 import { Links } from '../../constants';
 import { Section, Main, Div } from '../semantics/index';
 
@@ -9,7 +6,7 @@ const ContentSection = ({ searchParams }: SearchProps) => (
   <Main className="flex-col w-full mx-auto flex-center paddings max-w-screen-2xl">
     <Section className="w-full nav-padding">
       <Div className="flex-center relative min-h-[274px] w-full flex-col rounded-xl bg-banner bg-cover bg-center text-center">
-        <h1 className="mb-6 text-center text-white sm:heading1 heading2">{' '}</h1>
+        <h1 className="mb-6 text-center text-white sm:heading1 heading2"> </h1>
       </Div>
       <SearchForm />
     </Section>
@@ -50,7 +47,7 @@ const ContentSection = ({ searchParams }: SearchProps) => (
               id={resource._id}
               image={resource.image}
               downloadNumber={resource.views}
-              downloadLink={resource.downloadLink}
+              downloadLink={resource.downloadLink as string}
             />
           ))}
         </Div>
