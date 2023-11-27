@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
-import { Button } from "../ui/button";
+import { Button } from '../ui/button';
 import {
   Dialog,
   DialogContent,
@@ -8,18 +8,12 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../ui/dialog";
-import { Input } from "../ui/input";
-import { Label } from "../ui/label";
+} from '../ui/dialog';
+import { Input } from '../ui/input';
+import { Label } from '../ui/label';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-const ResourceCard = ({ id,
-  name,
-  link,
-  type,
-  sourceSVG,
-  description,
-  featured, }: Data) => (
+const ResourceCard = ({ id, name, link, type, sourceSVG, description, featured }: Data) => (
   <Card className="w-full max-w-fit border-0 !bg-transparent sm:max-w-[356px]">
     <a href={link} target="_blank" rel="noreferrer">
       <CardHeader className="flex-center flex-col gap-2.5 !p-0">

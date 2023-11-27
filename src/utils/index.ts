@@ -48,13 +48,6 @@ export const icons = {
   },
 };
 
-type UrlQueryParams = {
-  params: URLSearchParams;
-  key?: string;
-  value?: string;
-  keysToRemove?: string[];
-};
-
 export function formUrlQuery({ params, key, value, keysToRemove }: UrlQueryParams) {
   const currentUrl = qs.parse(params.toString());
 

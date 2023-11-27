@@ -64,3 +64,10 @@ interface HeaderProps {
   query: string;
   type: string;
 }
+
+type UrlQueryParams = {
+  params: URLSearchParams;
+  key?: string;
+  value?: string;
+  keysToRemove?: string[];
+};
