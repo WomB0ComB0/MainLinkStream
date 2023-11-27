@@ -47,7 +47,7 @@ const ContentSection = ({ searchParams }: SearchProps) => (
               id={resource._id}
               image={resource.image}
               downloadNumber={resource.views}
-              downloadLink={resource.downloadLink}
+              downloadLink={resource.downloadLink as string}
             />
           ))}
         </Div>

@@ -60,7 +60,8 @@
     {
       "files": ["./src/Components/ui/**/*", "./src/Components/browser/icons/**/*"],
       "rules": {
-        "max-len": "off"
+        "max-len": "off",
+        "no-unused-vars": "off"
       }
     }
   ]
