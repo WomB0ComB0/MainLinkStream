@@ -1,16 +1,16 @@
 import React, { memo } from 'react';
-import { motion } from 'framer-motion';
+import { MotionDiv } from '../constants/Motion';
 import { SemanticProps } from '../../types/semantic-props';
 import { cn } from '../../lib/utils';
 
 function Div({ framer, children, className, style, framerProps, attributes, key }: SemanticProps) {
-  type SectionMotionProps = typeof motion.div extends React.FC<infer P> ? P : never;
+  type SectionMotionProps = typeof MotionDiv extends React.FC<infer P> ? P : never;
   return (
     <>
       {framer ? (
-        <motion.div {...(framerProps as SectionMotionProps)} className={cn('', className)} style={style} key={key}>
+        <MotionDiv {...(framerProps as SectionMotionProps)} className={cn('', className)} style={style} key={key}>
           {children}
-        </motion.div>
+        </MotionDiv>
       ) : (
         <div {...attributes} className={cn('', className)} style={style}>
           {children}

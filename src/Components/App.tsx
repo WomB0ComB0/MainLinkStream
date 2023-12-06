@@ -6,25 +6,6 @@ import { Main } from './semantics/index';
 import { SemanticLayout } from './layout/index';
 
 const App = () => {
-  const [isOnline, setIsOnline] = useState(navigator.onLine);
-  const [isLoading, setIsLoading] = useState(true);
-  const handleOnline = () => {
-    setIsOnline(true);
-  };
-  const handleOffline = () => {
-    setIsOnline(false);
-  };
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 99999);
-    window.addEventListener('online', handleOnline);
-    window.addEventListener('offline', handleOffline);
-    return () => {
-      window.removeEventListener('online', handleOnline);
-      window.removeEventListener('offline', handleOffline);
-    };
-  }, []);
   const AppContainer = () => (
     <SemanticLayout>
       {/* <Header /> */}

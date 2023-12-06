@@ -1,16 +1,16 @@
 import React, { memo } from 'react';
-import { motion } from 'framer-motion';
+import { MotionArticle } from '../constants/Motion';
 import { SemanticProps } from '../../types/semantic-props';
 import { cn } from '../../lib/utils';
 
 function Article({ framer, children, className, style, framerProps, attributes, key }: SemanticProps) {
-  type SectionMotionProps = typeof motion.article extends React.FC<infer P> ? P : never;
+  type SectionMotionProps = typeof MotionArticle extends React.FC<infer P> ? P : never;
   return (
     <>
       {framer ? (
-        <motion.article {...(framerProps as SectionMotionProps)} className={cn('', className)} style={style} key={key}>
+        <MotionArticle {...(framerProps as SectionMotionProps)} className={cn('', className)} style={style} key={key}>
           {children}
-        </motion.article>
+        </MotionArticle>
       ) : (
         <article {...attributes} className={cn('', className)} style={style}>
           {children}
