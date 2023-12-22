@@ -17,7 +17,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <Router>
           <Routes>
             <Route path={'/'} element={<App />} />
-            {/* Research "errorElement" */}
             <Route path={'/*'} element={<NotFound />} />
           </Routes>
         </Router>
