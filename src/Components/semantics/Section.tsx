@@ -1,19 +1,19 @@
 import React, { memo } from 'react';
-import { motion } from 'framer-motion';
+import { MotionSection } from '../constants/Motion';
 import { SemanticProps } from '../../types/semantic-props';
 import { cn } from '../../lib/utils';
 
-function Section({ framer, children, className, style, framerProps, attributes, key }: NonNullable<SemanticProps>) {
-  type SectionMotionProps = typeof motion.section extends React.FC<infer P> ? P : never;
+function Section({ framer, children, className, style, framerProps, attributes, key }: SemanticProps) {
+  type SectionMotionProps = typeof MotionSection extends React.FC<infer P> ? P : never;
   return (
     <>
       {framer ? (
-        <motion.section
+        <MotionSection
           {...(framerProps as SectionMotionProps)}
           className={cn('', className)}
           style={style}
           key={key}
-        ></motion.section>
+        ></MotionSection>
       ) : (
         <section {...attributes} className={cn('', className)} style={style}>
           {children}

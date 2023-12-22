@@ -1,16 +1,16 @@
 import React, { memo } from 'react';
-import { motion } from 'framer-motion';
+import { MotionFigure } from '../constants/Motion';
 import { SemanticProps } from '../../types/semantic-props';
 import { cn } from '../../lib/utils';
 
 function Figure({ framer, children, className, style, framerProps, attributes, key }: SemanticProps) {
-  type SectionMotionProps = typeof motion.figure extends React.FC<infer P> ? P : never;
+  type SectionMotionProps = typeof MotionFigure extends React.FC<infer P> ? P : never;
   return (
     <>
       {framer ? (
-        <motion.figure {...(framerProps as SectionMotionProps)} className={cn('', className)} style={style} key={key}>
+        <MotionFigure {...(framerProps as SectionMotionProps)} className={cn('', className)} style={style} key={key}>
           {children}
-        </motion.figure>
+        </MotionFigure>
       ) : (
         <figure {...attributes} className={cn('', className)} style={style}>
           {children}
