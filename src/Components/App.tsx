@@ -1,15 +1,15 @@
-import { useState, useEffect } from 'react';
 import { FallBack as Offline } from './browser/dom-states/index';
 import ScreenLoader from './browser/dom-states/ScreenLoader';
-import Search from './Search';
 import { Main } from './semantics/index';
 import { SemanticLayout } from './layout/index';
+import { useOnlineStatus, useLoading } from '../hooks/index';
 
-const App = () => {
+const App = (): JSX.Element => {
+  const isOnline = useOnlineStatus();
+  const isLoading = useLoading();
   const AppContainer = () => (
     <SemanticLayout>
       {/* <Header /> */}
-      <Search />
     </SemanticLayout>
   );
   return (

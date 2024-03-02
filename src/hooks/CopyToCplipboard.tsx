@@ -1,10 +1,16 @@
 import { useCallback, useState } from 'react';
-// eslint-disable-next-line react-refresh/only-export-components
+
 export function useCopyToClipboard() {
   const [copied, setCopied] = useState(false);
   const copyToClipboard = useCallback((text: string) => {
     if ('clipboard' in navigator) {
-      return navigator.clipboard.writeText(text)
+      try {
+
+      } catch (error) {
+
+      }
+      return navigator.clipboard
+        .writeText(text)
         .then(() => {
           setCopied(true);
           setTimeout(() => setCopied(false), 2000); // Reset copied state after 2 seconds
@@ -19,7 +25,13 @@ export function useCopyToClipboard() {
 export function CopyToClipboard({ children }: { children: string }) {
   const { copied, copyToClipboard } = useCopyToClipboard();
   return (
-    <button onClick={() => copyToClipboard(children)}>
+    <button
+      onClick={
+        () => {
+          copyToClipboard(children);
+        }
+      }
+    >
       {copied ? 'Copied' : 'Copy'}
     </button>
   );

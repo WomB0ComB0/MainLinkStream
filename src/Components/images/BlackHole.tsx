@@ -5,7 +5,10 @@ export default function BlackHole({
   width,
   className,
   style,
-}: { height?: number | string; width?: number | string } & StylingProps) {
+}: {
+  height?: number | string;
+  width?: number | string
+} & StylingProps) {
   return (
     <img
       src="/assets/images/blackhole.png"

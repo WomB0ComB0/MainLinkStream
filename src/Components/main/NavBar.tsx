@@ -4,7 +4,7 @@ import { useState } from 'react';
 import classnames from 'classnames';
 import { Twirl } from 'hamburger-react';
 import { Nav, Menu, Div } from '../semantics/index';
-import { ModeToggle } from '../browser/dom-states/index';
+import { ModeToggle } from '../providers/theme/mode-toggle';
 import { GlobeAltIcon, ChartBarIcon, BookOpenIcon } from '../browser/icons/main/index';
 import { NavLinks } from '../../constants';
 import { useIsMobile } from '../../hooks/index';
